@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"exodiusstudios.comment-anchors",
+			"svelte.svelte-vscode"
+		]
+	},
+	"settings": {
+		"commentAnchors.tags.list": [
+			{
+				"tag": "INFO",
+				"scope": "hidden",
+				"highlightColor": "#95F2D9"
+			},
+			{
+				"tag": "TEST",
+				"scope": "hidden",
+				"highlightColor": "#F08CAE"
+			},
+			{
+				"tag": "LINK",
+				"scope": "hidden",
+				"highlightColor": "#2ECC71",
+				"behavior": "link"
+			}
+		]
+	}
+}
