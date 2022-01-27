@@ -1,0 +1,63 @@
+@use '../abstracts' as a;
+
+html {
+	// set rem: at default font-size (16px) 1rem is 10px
+	// through changing this font-size, everything adjusts
+	font-size: 0.625em;
+	font-family: Rubik, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 100;
+	letter-spacing: 0.1rem;
+}
+h1 {
+	font-size: 2.7rem;
+	padding: 1rem 0;
+}
+h2 {
+	font-size: 2rem;
+	padding: 0.7rem 0;
+}
+
+p,
+label,
+span,
+a,
+ul,
+ol {
+	font-size: 1.5rem;
+}
+small {
+	font-size: 1.1rem;
+	line-height: 0.7;
+}
+
+a {
+	text-decoration: none;
+	color: a.$lavender-floral;
+}
+
+code {
+	font-family: 'Courier New', Courier, monospace;
+	background-color: darken(a.$gray5, 4);
+	padding: 0.3rem;
+	border-radius: 0.3rem;
+}
+
+.text-overflow {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: '...';
+}
+.no-select {
+	user-select: none;
+}
+.select {
+	user-select: text;
+}

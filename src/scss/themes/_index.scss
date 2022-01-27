@@ -1,0 +1,10 @@
+@use '../abstracts' as a;
+
+:root {
+	color-scheme: dark light;
+}
+
+body {
+	background-color: a.$gray5;
+	color: a.$gray1;
+}
