@@ -25,7 +25,7 @@
 
 		.card {
 			width: clamp(30rem, 75rem, 95%);
-			background-color: a.$gray6;
+			background-color: a.$gray5;
 			margin: auto;
 			padding: 1.5rem;
 
