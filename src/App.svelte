@@ -1,4 +1,8 @@
 <script lang="ts">
+	import CalculationForm from './components/CalculationForm.svelte';
+
+	let pointsReached;
+	let pointsMaximum;
 </script>
 
 <main>
@@ -9,6 +13,8 @@
 			AESTUMARIS is a little tool to calculate grades based on the points,
 			reached in a classtest.
 		</p>
+
+		<CalculationForm bind:pointsMaximum bind:pointsReached />
 	</div>
 </main>
 

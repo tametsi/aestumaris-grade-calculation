@@ -1,0 +1,41 @@
+@use '../abstracts' as a;
+
+input {
+	font-size: inherit;
+	display: inline-block;
+	width: clamp(20rem, 50rem, 70%);
+	background-color: a.$gray6;
+	border: none;
+	border-radius: 0.5rem;
+	color: inherit;
+	padding: 0.7rem;
+	text-align: left;
+
+	box-shadow: none;
+	border: none;
+	outline: none;
+
+	&:active,
+	&:focus {
+		box-shadow: 0 0 0.4rem a.$gray2;
+	}
+
+	&::placeholder {
+		opacity: 70%;
+	}
+
+	&.small {
+		font-size: 1.1rem;
+		padding: 0.5rem;
+	}
+
+	&[type='number'],
+	&[type='checkbox'] {
+		width: auto;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 80%;
+	}
+}
