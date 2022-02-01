@@ -1,8 +1,10 @@
 <script lang="ts">
 	import CalculationForm from './components/CalculationForm.svelte';
+	import Aestumaris from './lib/aestumaris';
 
-	let pointsReached: number;
-	let pointsMaximum: number;
+	const aestumaris = new Aestumaris();
+
+	$: calculatedGrade = aestumaris.calculateGrade();
 </script>
 
 <main>
@@ -14,7 +16,10 @@
 			reached in a classtest.
 		</p>
 
-		<CalculationForm bind:pointsMaximum bind:pointsReached />
+		<CalculationForm
+			bind:pointsMaximum={aestumaris.pointsMaximum}
+			bind:pointsReached={aestumaris.pointsReached}
+		/>
 	</div>
 </main>
 
