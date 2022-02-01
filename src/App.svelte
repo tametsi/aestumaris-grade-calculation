@@ -1,8 +1,8 @@
 <script lang="ts">
 	import CalculationForm from './components/CalculationForm.svelte';
 
-	let pointsReached;
-	let pointsMaximum;
+	let pointsReached: number;
+	let pointsMaximum: number;
 </script>
 
 <main>
