@@ -20,6 +20,9 @@
 			bind:pointsMaximum={aestumaris.pointsMaximum}
 			bind:pointsReached={aestumaris.pointsReached}
 		/>
+
+		<h2>Grade</h2>
+		<span class="grade">{calculatedGrade}</span>
 	</div>
 </main>
 
@@ -36,6 +39,14 @@
 
 			border-radius: 0.5rem;
 			box-shadow: darken(a.$gray6, 10) 0 0 1.5rem;
+
+			.grade {
+				font-size: 4rem;
+				background-color: a.$gray6;
+				border: 0.2rem solid darken(a.$gray1, 40);
+				border-radius: 0.4rem;
+				padding: 1rem 2rem;
+			}
 		}
 	}
 </style>
