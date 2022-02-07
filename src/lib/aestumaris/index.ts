@@ -1,3 +1,5 @@
+import tables from '../../../tables/index';
+
 export default class Aestumaris {
 	private _pointsReached = 0;
 	private _pointsMaximum = 15;
@@ -15,8 +17,7 @@ export default class Aestumaris {
 		this._pointsMaximum = value;
 	}
 
-	/** @todo TODO logic */
-	calculateGrade(): number {
-		return 0;
+	calculateGrade(): string {
+		return tables[0].calculateGrade(this.pointsReached, this.pointsMaximum);
 	}
 }
