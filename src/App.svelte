@@ -27,6 +27,8 @@
 		<CalculationForm
 			bind:pointsMaximum={aestumaris.pointsMaximum}
 			bind:pointsReached={aestumaris.pointsReached}
+			tableList={aestumaris.tableManager.getTableList()}
+			bind:tableIndex
 		/>
 
 		<h2>Grade</h2>
