@@ -1,7 +1,6 @@
 <script lang="ts">
 	import CalculationForm from './components/CalculationForm.svelte';
 	import Aestumaris from './lib/aestumaris';
-	import type Table from './lib/table/table';
 
 	const aestumaris = new Aestumaris();
 
