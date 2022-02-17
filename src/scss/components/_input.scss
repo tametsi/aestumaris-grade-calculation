@@ -1,6 +1,7 @@
 @use '../abstracts' as a;
 
-input {
+input,
+select {
 	font-size: inherit;
 	display: inline-block;
 	width: clamp(20rem, 50rem, 70%);
@@ -37,4 +38,8 @@ input {
 		cursor: not-allowed;
 		opacity: 80%;
 	}
+}
+
+select {
+	width: auto;
 }

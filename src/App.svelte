@@ -1,10 +1,18 @@
 <script lang="ts">
 	import CalculationForm from './components/CalculationForm.svelte';
 	import Aestumaris from './lib/aestumaris';
+	import type Table from './lib/table/table';
 
 	const aestumaris = new Aestumaris();
 
 	$: calculatedGrade = aestumaris.calculateGrade();
+	let tableIndex = 0;
+
+	$: {
+		aestumaris.tableManager.setActiveTable(tableIndex);
+		// also update the calculatedGrade
+		calculatedGrade = aestumaris.calculateGrade();
+	}
 </script>
 
 <main>
