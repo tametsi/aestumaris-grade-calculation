@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Calculation from './pages/Calculation.svelte';
+	import Sidebar from './components/Sidebar.svelte';
 
 	import { fade } from 'svelte/transition';
 	import { afterUpdate } from 'svelte';
@@ -26,6 +27,10 @@
 <svelte:window on:hashchange={checkHash} />
 
 <div class="wrapper">
+	<aside>
+		<Sidebar bind:activeTab />
+	</aside>
+
 	<main>
 		{#if activeTab === Tab.calculator}
 			<div in:fade={{ duration: FADE_DURATION }}>
@@ -34,3 +39,24 @@
 		{/if}
 	</main>
 </div>
+
+<style lang="scss">
+	.wrapper {
+		display: grid;
+		grid-template-areas: 'sidebar main';
+		grid-template-columns: clamp(5vw, 18rem, 25vw) 1fr;
+
+		overflow: hidden;
+		height: 100vh;
+
+		aside {
+			grid-area: sidebar;
+			overflow: auto;
+		}
+
+		main {
+			grid-area: main;
+			overflow: auto;
+		}
+	}
+</style>
