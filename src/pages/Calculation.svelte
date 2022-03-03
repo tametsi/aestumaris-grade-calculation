@@ -15,45 +15,33 @@
 </script>
 
 <div class="wrapper">
-	<div class="card">
-		<section>
-			<h1>AESTUMARIS - Grade Calculation</h1>
+	<section>
+		<h1>AESTUMARIS - Grade Calculation</h1>
 
-			<CalculationForm
-				bind:pointsMaximum={aestumaris.pointsMaximum}
-				bind:pointsReached={aestumaris.pointsReached}
-				tableList={aestumaris.tableManager.getTableList()}
-				bind:tableIndex
-			/>
+		<CalculationForm
+			bind:pointsMaximum={aestumaris.pointsMaximum}
+			bind:pointsReached={aestumaris.pointsReached}
+			tableList={aestumaris.tableManager.getTableList()}
+			bind:tableIndex
+		/>
 
-			<h2>Grade</h2>
-			<span class="grade">{calculatedGrade}</span>
-		</section>
-	</div>
+		<h2>Grade</h2>
+		<span class="grade">{calculatedGrade}</span>
+	</section>
 </div>
 
 <style lang="scss">
 	@use '../scss/abstracts' as a;
 
 	.wrapper {
-		padding: 1rem 0;
+		width: clamp(30rem, 75rem, 95%);
 
-		.card {
-			width: clamp(30rem, 75rem, 95%);
-			background-color: a.$gray5;
-			margin: auto;
-			padding: 1.5rem;
-
-			border-radius: 0.5rem;
-			box-shadow: darken(a.$gray6, 10) 0 0 1.5rem;
-
-			.grade {
-				font-size: 4rem;
-				background-color: a.$gray6;
-				border: 0.2rem solid darken(a.$gray1, 40);
-				border-radius: 0.4rem;
-				padding: 1rem 2rem;
-			}
+		.grade {
+			font-size: 4rem;
+			background-color: a.$gray6;
+			border: 0.2rem solid darken(a.$gray1, 40);
+			border-radius: 0.4rem;
+			padding: 1rem 2rem;
 		}
 	}
 </style>

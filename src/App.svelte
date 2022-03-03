@@ -41,6 +41,8 @@
 </div>
 
 <style lang="scss">
+	@use './scss/abstracts' as a;
+
 	.wrapper {
 		display: grid;
 		grid-template-areas: 'sidebar main';
@@ -57,6 +59,9 @@
 		main {
 			grid-area: main;
 			overflow: auto;
+
+			background-color: a.$gray5;
+			padding: 2rem;
 		}
 	}
 </style>
