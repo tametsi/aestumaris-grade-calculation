@@ -1,61 +1,67 @@
 <script lang="ts">
-	import CalculationForm from './components/CalculationForm.svelte';
-	import Aestumaris from './lib/aestumaris';
+	import Calculation from './pages/Calculation.svelte';
+	import Sidebar from './components/Sidebar.svelte';
 
-	const aestumaris = new Aestumaris();
+	import { fade } from 'svelte/transition';
+	import { afterUpdate } from 'svelte';
+	import Tab from './tab';
 
-	$: calculatedGrade = aestumaris.calculateGrade();
-	let tableIndex = 0;
+	const FADE_DURATION = 200;
 
-	$: {
-		aestumaris.tableManager.setActiveTable(tableIndex);
-		// also update the calculatedGrade
-		calculatedGrade = aestumaris.calculateGrade();
+	let activeTab: Tab = Tab.calculator;
+
+	function checkHash() {
+		const hash = window.location.hash.substring(1);
+		if (!Object.keys(Tab).includes(hash)) return;
+
+		activeTab = Tab[hash as keyof typeof Tab] ?? Tab.calculator;
 	}
+	checkHash();
+
+	// update hash
+	afterUpdate(() => {
+		window.location.hash = `#${Tab[activeTab] ?? ''}`;
+	});
 </script>
 
-<main>
-	<div class="card">
-		<h1>AESTUMARIS - Grade Calculation</h1>
+<svelte:window on:hashchange={checkHash} />
 
-		<p>
-			AESTUMARIS is a little tool to calculate grades based on the points,
-			reached in a classtest.
-		</p>
+<div class="wrapper">
+	<aside>
+		<Sidebar bind:activeTab />
+	</aside>
 
-		<CalculationForm
-			bind:pointsMaximum={aestumaris.pointsMaximum}
-			bind:pointsReached={aestumaris.pointsReached}
-			tableList={aestumaris.tableManager.getTableList()}
-			bind:tableIndex
-		/>
-
-		<h2>Grade</h2>
-		<span class="grade">{calculatedGrade}</span>
-	</div>
-</main>
+	<main>
+		{#if activeTab === Tab.calculator}
+			<div in:fade={{ duration: FADE_DURATION }}>
+				<Calculation />
+			</div>
+		{/if}
+	</main>
+</div>
 
 <style lang="scss">
 	@use './scss/abstracts' as a;
-	main {
-		padding: 1rem 0;
 
-		.card {
-			width: clamp(30rem, 75rem, 95%);
+	.wrapper {
+		display: grid;
+		grid-template-areas: 'sidebar main';
+		grid-template-columns: clamp(5vw, 18rem, 25vw) 1fr;
+
+		overflow: hidden;
+		height: 100vh;
+
+		aside {
+			grid-area: sidebar;
+			overflow: auto;
+		}
+
+		main {
+			grid-area: main;
+			overflow: auto;
+
 			background-color: a.$gray5;
-			margin: auto;
-			padding: 1.5rem;
-
-			border-radius: 0.5rem;
-			box-shadow: darken(a.$gray6, 10) 0 0 1.5rem;
-
-			.grade {
-				font-size: 4rem;
-				background-color: a.$gray6;
-				border: 0.2rem solid darken(a.$gray1, 40);
-				border-radius: 0.4rem;
-				padding: 1rem 2rem;
-			}
+			padding: 2rem;
 		}
 	}
 </style>
