@@ -60,7 +60,7 @@
 			grid-area: main;
 			overflow: auto;
 
-			background-color: a.$gray5;
+			width: clamp(30rem, 75rem, 95%);
 			padding: 2rem;
 		}
 	}
