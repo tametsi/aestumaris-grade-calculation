@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Calculation from './pages/Calculation.svelte';
+	import About from './pages/About.svelte';
 	import Sidebar from './components/Sidebar.svelte';
 
 	import { fade } from 'svelte/transition';
@@ -35,6 +36,11 @@
 		{#if activeTab === Tab.calculator}
 			<div in:fade={{ duration: FADE_DURATION }}>
 				<Calculation />
+			</div>
+		{/if}
+		{#if activeTab === Tab.about}
+			<div in:fade={{ duration: FADE_DURATION }}>
+				<About />
 			</div>
 		{/if}
 	</main>

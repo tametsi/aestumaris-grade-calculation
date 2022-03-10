@@ -17,6 +17,13 @@
 	</div>
 	<div>
 		<!-- bottom items -->
+		<a
+			class="sidebar-item text-overflow no-select"
+			class:active={activeTab === Tab.about}
+			href="#about"
+		>
+			<span>🦎 About</span>
+		</a>
 	</div>
 </div>
 
