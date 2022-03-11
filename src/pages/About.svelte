@@ -16,6 +16,17 @@
 	</section>
 
 	<section>
+		<h2>Code</h2>
+		<p>
+			The code can be found on <a
+				href="https://github.com/tametsi/aestumaris-grade-calculation"
+				target="_blank"
+				rel="noopener noreferrer">GitHub</a
+			>.
+		</p>
+	</section>
+
+	<section>
 		<h2>Libraries</h2>
 		<ul>
 			<li>
