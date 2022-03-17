@@ -55,6 +55,6 @@
 
 <style lang="scss">
 	section {
-		padding: 0.7rem 0;
+		padding-bottom: 1.2rem;
 	}
 </style>
