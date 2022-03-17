@@ -14,6 +14,13 @@
 		>
 			<span>⚡ Calculator</span>
 		</a>
+		<a
+			class="sidebar-item text-overflow no-select"
+			class:active={activeTab === Tab.tables}
+			href="#tables"
+		>
+			<span>🔨 Tables</span>
+		</a>
 	</div>
 	<div>
 		<!-- bottom items -->
